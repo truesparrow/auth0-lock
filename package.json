@@ -1,0 +1,59 @@
+{
+    "name": "@truesparrow/auth0-lock",
+    "version": "0.0.0",
+    "description": "A wrapper for the auth0-lock, tailored for this service",
+    "author": "CHM SQRT2 Team",
+    "scripts": {
+        "build": "tsc",
+        "test-dev": "tsc --watch & mocha --watch $(find out -name '*-test.js')",
+        "test": "tsc && istanbul cover --config ./.istanbul.yml ./node_modules/mocha/bin/_mocha --  $(find out -name '*-test.js') && remap-istanbul -i ./build/coverage/coverage-final.json -o ./build/coverage/coverage-remapped.json && coverage-filter -i ./build/coverage/coverage-remapped.json -o ./build/coverage/coverage-filtered.json",
+        "push-coverage-to-codecov": "codecov -f ./build/coverage/coverage-filtered.json",
+        "docs": "typedoc src/"
+    },
+    "keywords": [
+        "client",
+        "identity",
+        "sdk",
+        "server",
+        "auth0"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/truesparrow/auth0-lock.git"
+    },
+    "homepage": "https://github.com/truesparrow/auth0-lock#readme",
+    "license": "MIT",
+    "main": "./index.js",
+    "types": "./index.d.ts",
+    "filesPack": {
+        "out": "e:.",
+        "README.md": "f:README.md",
+        "package.json": "f:package.json",
+        "tsconfig.json": "f:tsconfig.json"
+    },
+    "dependencies": {
+        "@truesparrow/identity-sdk-js": "=1.0.0",
+        "auth0-lock": "=11.1.2"
+    },
+    "devDependencies": {
+        "@truesparrow/togemfury": "=0.0.3",
+        "@types/auth0-lock": "=10.16.3",
+        "@types/chai": "=4.0.8",
+        "@types/express": "=4.0.39",
+        "@types/istanbul": "=0.4.29",
+        "@types/mocha": "=2.2.44",
+        "@types/node": "=8.0.57",
+        "@types/supertest": "=2.0.4",
+        "@types/uuid": "=3.4.3",
+        "chai": "=4.1.2",
+        "codecov": "=3.0.0",
+        "coverage-filter": "=1.0.0",
+        "istanbul": "=0.4.5",
+        "mocha": "=4.0.1",
+        "remap-istanbul": "=0.9.5",
+        "supertest": "=3.0.0",
+        "testdouble": "=3.2.6",
+        "typedoc": "=0.9.0",
+        "typescript": "=2.6.2"
+    }
+}
