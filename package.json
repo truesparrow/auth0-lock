@@ -1,6 +1,6 @@
 {
     "name": "@truesparrow/auth0-lock",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A wrapper for the auth0-lock, tailored for this service",
     "author": "CHM SQRT2 Team",
     "scripts": {
