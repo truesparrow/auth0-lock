@@ -47,6 +47,13 @@ export class Auth0Lock {
             _this._auth0ClientConfig.clientId,
             _this._auth0ClientConfig.domain, {
                 closable: canDismiss,
+                theme: {
+                    logo: _this._auth0ClientConfig.styleLogoUri,
+                    primaryColor: _this._auth0ClientConfig.stylePrimaryColor
+                },
+                languageDictionary: {
+                    title: _this._auth0ClientConfig.styleApplicationName
+                },
                 auth: {
                     redirect: true,
                     redirectUrl: _this._auth0ClientConfig.loginCallbackUri,
