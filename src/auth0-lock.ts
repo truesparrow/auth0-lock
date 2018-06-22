@@ -40,7 +40,7 @@ export class Auth0Lock {
         var _this = this;
 
         // This generates an async chunk.
-        const postLoginInfo = new PostLoginRedirectInfo(redirectLocation.pathname);
+        const postLoginInfo = new PostLoginRedirectInfo(redirectLocation.pathname + '?' + redirectLocation.search);
         const postLoginInfoSer = _this._postLoginRedirectInfoMarshaller.pack(postLoginInfo);
 
         const auth0: any = new auth0Lock.default(
